@@ -1,0 +1,8 @@
+c:\users\taha\documents\visual studio 2015\Projects\WindowsService2\WindowsService2\bin\Debug\WindowsService2.exe.config
+c:\users\taha\documents\visual studio 2015\Projects\WindowsService2\WindowsService2\bin\Debug\WindowsService2.exe
+c:\users\taha\documents\visual studio 2015\Projects\WindowsService2\WindowsService2\bin\Debug\WindowsService2.pdb
+c:\users\taha\documents\visual studio 2015\Projects\WindowsService2\WindowsService2\obj\Debug\WindowsService2.exe
+c:\users\taha\documents\visual studio 2015\Projects\WindowsService2\WindowsService2\obj\Debug\WindowsService2.pdb
+c:\users\taha\documents\visual studio 2015\Projects\WindowsService2\WindowsService2\obj\Debug\WindowsService2.ProjectInstaller.resources
+c:\users\taha\documents\visual studio 2015\Projects\WindowsService2\WindowsService2\obj\Debug\Service.csproj.GenerateResource.Cache
+c:\users\taha\documents\visual studio 2015\Projects\WindowsService2\WindowsService2\obj\Debug\Service.csprojResolveAssemblyReference.cache

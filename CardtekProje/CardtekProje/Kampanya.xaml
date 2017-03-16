@@ -1,0 +1,88 @@
+﻿<Window x:Class="CardtekProje.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CardtekProje"
+        mc:Ignorable="d"
+        Title="Kampanya Sayfası" Height="566.333" Width="702" ResizeMode="CanMinimize"  Icon="icon2.ico" >
+    <Grid Background="SlateBlue" Margin="0,0,0,-1">
+        <Menu Width="694" Background="LightSteelBlue" DockPanel.Dock="Top" Height="28" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <MenuItem Header="_Musteri Tablo" FontSize="14" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold" Click="Kampanya_click"/>
+            <MenuItem Header="_İslem Tablo" FontSize="14" FontWeight="Bold" FontFamily="Comic Sans MS" FontStyle="Italic" Click="Islem_click" />
+            <MenuItem Header="SMS Tablo" FontSize="14" FontWeight="Black" FontFamily="Comic Sans MS" FontStyle="Italic" Click="sms_click" />
+            <MenuItem Header="                                                                                       " Visibility="Hidden"/>
+            <MenuItem Header="_İstatistikler" FontSize="14" FontWeight="Bold" FontFamily="Comic Sans MS" FontStyle="Italic" Click="istatislik_click" HorizontalAlignment="Right" VerticalAlignment="Center" />
+        </Menu>
+        
+        <TextBlock x:Name="TutarAralıgı_TextBlock" Margin="43,163,0,0" TextWrapping="Wrap" FontSize="16" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="115" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold" Text="Tutar Aralığı:"/>
+        <TextBox x:Name="TutarAraligi_textbox1" GotFocus="basildi" LostFocus="Tutar1_birakti" Margin="163,162,0,0" FontFamily="Comic Sans Ms" TextWrapping="Wrap" FontSize="16" HorizontalAlignment="Left" Width="63" Height="23" VerticalAlignment="Top"/>
+        <TextBox x:Name="TutarAraligi_textbox2" GotFocus="basildi" LostFocus="Tutar2_birakti" Margin="251,162,0,0" FontFamily="Comic Sans Ms" TextWrapping="Wrap" FontSize="16" HorizontalAlignment="Left" Width="66" Height="24" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Tire1" Margin="231,163,0,0" TextWrapping="Wrap" FontSize="16" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="20" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold" Text="-" RenderTransformOrigin="0.35,-0.346"/>
+        <TextBlock x:Name="KampanyaAdi_textblock" Margin="43,113,0,0" TextWrapping="Wrap" FontSize="16" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="115" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold" RenderTransformOrigin="0.435,-1.385"><Run Text="Kampanya "/><Run Text="Adı:"/></TextBlock>
+        <TextBlock x:Name="TarihAraligi_textblock" Margin="43,210,0,0" TextWrapping="Wrap" FontSize="16" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="115" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold" RenderTransformOrigin="0.435,-1.385"><Run Text="Tarih Aralığı"/><Run Text=":"/></TextBlock>
+        <TextBlock x:Name="tire2" Margin="265,210,0,0" TextWrapping="Wrap" FontSize="16" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="20" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold" Text="-" RenderTransformOrigin="0.35,-0.346"/>
+        <TextBox x:Name="KampanyaAdi_textbox" GotFocus="basildi" LostFocus="KampanyaAdi_birakti" Margin="163,112,0,0" FontFamily="Comic Sans Ms" TextWrapping="Wrap" FontSize="16" HorizontalAlignment="Left" Width="154" Height="23" VerticalAlignment="Top"/>
+        <DatePicker x:Name="Tarih_Baslangic" SelectedDateChanged="degisti" HorizontalAlignment="Left" Margin="163,212,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="Tarih_Bitis" SelectedDateChanged="degisti2" HorizontalAlignment="Left" Margin="290,211,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Taksit_Sayisi_TextBlock" Margin="43,59,0,0" TextWrapping="Wrap" FontSize="16" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="115" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold" RenderTransformOrigin="0.435,-1.385" Text="Taksit Sayis:"/>
+        <TextBox x:Name="Taksit_Sayisi_Textbox" GotFocus="basildi" LostFocus="TaksitSayisi_Birakti" Margin="163,59,0,0" FontFamily="Comic Sans Ms" TextWrapping="Wrap" FontSize="16" HorizontalAlignment="Left" Width="152" Height="23" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Mcc_TextBlock" Margin="402,162,0,0" TextWrapping="Wrap" FontSize="16" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="48" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold" Text="MCC:" RenderTransformOrigin="0.435,-1.385"/>
+        <ComboBox x:Name="Mcc_comboBox" HorizontalAlignment="Left" Margin="474,164,0,0" VerticalAlignment="Top" Width="164" SelectionChanged="Mcc_comboBox_SelectionChanged"/>
+        <TextBlock x:Name="Ucret_TextBlock" Margin="402,116,0,0" TextWrapping="Wrap" FontSize="16" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="66" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold" Text="Ücret:" RenderTransformOrigin="0.435,-1.385"/>
+        <TextBlock x:Name="Faiz_TextBlock" Margin="402,59,0,0" TextWrapping="Wrap" FontSize="16" Height="26" VerticalAlignment="Top" HorizontalAlignment="Left" Width="66" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold" Text="Faiz:" RenderTransformOrigin="0.435,-1.385"/>
+        <TextBox x:Name="Ucret_TextBox" GotFocus="basildi" LostFocus="Ucret_birakti" Margin="473,116,0,0" FontFamily="Comic Sans Ms" TextWrapping="Wrap" FontSize="16" HorizontalAlignment="Left" Width="164" Height="23" VerticalAlignment="Top"/>
+        <TextBox x:Name="Faiz_TextBox" GotFocus="basildi"  LostFocus="Faiz_birakti" Margin="473,58,0,0" FontFamily="Comic Sans Ms" TextWrapping="Wrap" FontSize="16" HorizontalAlignment="Left" Width="164" Height="23" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="43,268,0,0" VerticalAlignment="Top" Height="176" Width="594" MouseDoubleClick="Kisi_Selected"/>
+        <Image x:Name="KampanyaAdi_control" Source="Pictures/Tik_Isareti.png" HorizontalAlignment="Left" Height="30" Margin="330,105,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="1,0.705"/>
+        <Image x:Name="TutarAraligi_control" Source="Pictures/Tik_Isareti.png" HorizontalAlignment="Left" Height="30" Margin="330,156,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="1,0.705"/>
+        <Image x:Name="TarihAraligi_control" Source="Pictures/Tik_Isareti.png" HorizontalAlignment="Left" Height="30" Margin="402,206,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="1,0.705"/>
+        <Image x:Name="TaksitSayisi_control" Source="Pictures/Tik_Isareti.png" HorizontalAlignment="Left" Height="30" Margin="330,55,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="1,0.705"/>
+        <Image x:Name="Faiz_kontrol" Source="Pictures/Tik_Isareti.png" HorizontalAlignment="Left" Height="30" Margin="656,52,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="1,0.705"/>
+        <Image x:Name="Ucret_control" Source="Pictures/Tik_Isareti.png" HorizontalAlignment="Left" Height="30" Margin="656,112,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="1,0.705"/>
+        <Image x:Name="MCC_control" Source="Pictures/Tik_Isareti.png" HorizontalAlignment="Left" Height="30" Margin="656,156,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="1,0.705"/>
+        <TextBlock x:Name="KampanyaAdı_Wrong" HorizontalAlignment="Left" Margin="165,140,0,0" TextWrapping="Wrap" Text="Yanlış Girdi !" VerticalAlignment="Top" Width="120" Foreground="Crimson" Visibility="Visible" FontStyle="Italic" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+        <TextBlock x:Name="TutarAraligi_Wrong" HorizontalAlignment="Left" Margin="165,190,0,0" TextWrapping="Wrap" Text="Yanlış Girdi !" VerticalAlignment="Top" Width="120" Foreground="Crimson" Visibility="Visible" FontStyle="Italic" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+        <TextBlock x:Name="TaksitSayisi_Wrong" HorizontalAlignment="Left" Margin="163,87,0,0" TextWrapping="Wrap" Text="Yanlış Girdi !" VerticalAlignment="Top" Width="120" Foreground="Crimson" Visibility="Visible" FontStyle="Italic" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+        <TextBlock x:Name="TarihAraligi_Wrong" HorizontalAlignment="Left" Margin="163,246,0,0" TextWrapping="Wrap" Text="Yanlış Girdi !" VerticalAlignment="Top" Width="120" Foreground="Crimson" Visibility="Visible" FontStyle="Italic" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+        <TextBlock x:Name="MCC_Wrong" HorizontalAlignment="Left" Margin="474,191,0,0" TextWrapping="Wrap" Text="Yanlış Girdi !" VerticalAlignment="Top" Width="120" Foreground="Crimson" Visibility="Visible" FontStyle="Italic" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+        <TextBlock x:Name="Ucret_Wrong" HorizontalAlignment="Left" Margin="474,141,0,0" TextWrapping="Wrap" Text="Yanlış Girdi !" VerticalAlignment="Top" Width="120" Foreground="Crimson" Visibility="Visible" FontStyle="Italic" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+        <TextBlock x:Name="Faiz_Wrong" HorizontalAlignment="Left" Margin="474,90,0,0" TextWrapping="Wrap" Text="Yanlış Girdi !" VerticalAlignment="Top" Width="120" Foreground="Crimson" Visibility="Visible" FontStyle="Italic" FontWeight="Bold" FontFamily="Comic Sans MS"/>
+
+        <Button x:Name="Kampanya_Guncelle" Margin="43,455,0,0" Click="Guncelle_click" HorizontalAlignment="Left" VerticalAlignment="Top" Height="57" Width="73" >
+            <StackPanel Height="47" Width="69">
+                <Image Source="C:\Users\Taha\Documents\Visual Studio 2015\Projects\CardtekProje\CardtekProje\Pictures\Guncelle.png" Height="30" RenderTransformOrigin="-0.033,0.433" />
+                <TextBlock  Height="18" ><Run Text=" "/><Run Text="  "/><Run Text="Guncelle"/></TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="Kampanya_Ekle" Margin="170,455,0,0" Click="Ekle_Click" HorizontalAlignment="Left" VerticalAlignment="Top" Height="57" Width="72" >
+            <StackPanel Height="47" Width="69">
+                <Image Source="C:\Users\Taha\Documents\Visual Studio 2015\Projects\CardtekProje\CardtekProje\Pictures\Ekle.png" Height="30" RenderTransformOrigin="-0.033,0.433" Margin="0,0,5,0" />
+                <TextBlock  Height="21" ><Run Text=" "/><Run Text="  "/><Run Text="    "/><Run Text="Ekle"/></TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="Kampanya_Sil" Margin="429,455,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="57" Width="72" Click="Sil_Click" >
+            <StackPanel Height="47" Width="68">
+                <Image Source="C:\Users\Taha\Documents\Visual Studio 2015\Projects\CardtekProje\CardtekProje\Pictures\sil.png" Height="30" RenderTransformOrigin="-0.033,0.433" />
+                <TextBlock  Height="21" ><Run Text=" "/><Run Text="  "/><Run Text="   "/><Run Text=" "/><Run Text=" "/><Run Text="Sil"/></TextBlock>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="Kampanya_Goster" Margin="565,455,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="57" Width="72" Click="Goster_Click"  >
+            <StackPanel Height="47" Width="69">
+                <Image Source="C:\Users\Taha\Documents\Visual Studio 2015\Projects\CardtekProje\CardtekProje\Pictures\goster.png" Height="30" RenderTransformOrigin="-0.033,0.433" Margin="0,0,5,0" />
+                <TextBlock  Height="16" Text="      Getir" HorizontalAlignment="Left" Width="69" />
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="Temizle" Margin="299,455,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="57" Width="72" Click="Temizle_Click"  >
+            <StackPanel Height="47" Width="69">
+                <Image Source="C:\Users\Taha\Documents\Visual Studio 2015\Projects\CardtekProje\CardtekProje\Pictures\temizle.png" Height="30" RenderTransformOrigin="-0.033,0.433" Margin="0,0,5,0" />
+                <TextBlock  Height="16" Text="   Temizle" HorizontalAlignment="Left" Width="69" />
+            </StackPanel>
+        </Button>
+
+    </Grid>
+</Window>
